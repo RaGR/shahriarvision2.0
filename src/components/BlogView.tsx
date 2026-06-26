@@ -70,7 +70,7 @@ export default function BlogView({ selectedPostId, onPostSelect, onPageChange }:
             {/* Back button */}
             <button
               onClick={() => onPostSelect(null)}
-              className="flex items-center gap-1.5 text-sm font-bold text-[#0ea5e9] hover:text-[#08cc7] cursor-pointer"
+              className="flex items-center gap-1.5 text-sm font-bold text-sky-500 hover:text-sky-600 cursor-pointer"
             >
               <ArrowRight className="w-4 h-4 ml-1" />
               <span>برگشت به مجله کسب‌وکار</span>
@@ -238,7 +238,7 @@ export default function BlogView({ selectedPostId, onPostSelect, onPageChange }:
                   className={`text-xs px-3.5 py-1.5 rounded-full font-medium transition-all cursor-pointer ${
                     activeCategory === cat
                       ? 'bg-[#0ea5e9] text-white shadow-sm'
-                      : 'bg-gray-150 text-gray-600 hover:bg-gray-200'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
                   {cat}
@@ -322,7 +322,7 @@ export default function BlogView({ selectedPostId, onPostSelect, onPageChange }:
                     <div className="pt-4 border-t border-gray-50 flex items-center justify-between mt-4">
                       <button
                         onClick={() => onPostSelect(post.id)}
-                        className="text-xs font-bold text-[#0ea5e9] hover:text-[#08cc7] flex items-center gap-1 cursor-pointer"
+                        className="text-xs font-bold text-sky-500 hover:text-sky-600 flex items-center gap-1 cursor-pointer"
                       >
                         <span>مطالعه کامل مقاله</span>
                         <ChevronLeft className="w-4 h-4" />

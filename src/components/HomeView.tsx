@@ -22,7 +22,7 @@ interface HomeViewProps {
 export default function HomeView({ onPageChange, onPostSelect }: HomeViewProps) {
   
   // High-end sky blue abstract vector visual or CEO portrait switcher system
-  const [heroVisualType, setHeroVisualType] = useState<'vector' | 'portrait'>('vector');
+  const [heroVisualType, setHeroVisualType] = useState<'vector' | 'portrait'>('portrait');
 
   // Interactive "Clock Metaphor" Widget State
   const [clockStep, setClockStep] = useState<'disjointed' | 'organized'>('disjointed');
@@ -127,8 +127,19 @@ export default function HomeView({ onPageChange, onPostSelect }: HomeViewProps) 
             <div className="lg:col-span-5 relative mt-6 lg:mt-0">
               <div className="absolute inset-0 bg-gradient-to-tr from-sky-400/25 to-transparent blur-3xl pointer-events-none -z-10" />
               
-              {/* Premium High-Fidelity Selector Controls */}
-              <div className="flex justify-center gap-2 mb-4 bg-sky-100/50 p-1.5 rounded-xl border border-sky-200/60 max-w-[280px] mx-auto shadow-sm">
+              {/* Premium Visual Switcher Controls */}
+              <div className="flex justify-center gap-2 mb-4 bg-white/80 backdrop-blur-sm p-1.5 rounded-xl border border-sky-200/60 max-w-[280px] mx-auto shadow-sm">
+                <button
+                  type="button"
+                  onClick={() => setHeroVisualType('portrait')}
+                  className={`flex-1 py-1.5 px-3 rounded-lg text-[10px] sm:text-xs font-bold transition-all cursor-pointer ${
+                    heroVisualType === 'portrait'
+                      ? 'bg-orange-500 text-white shadow-md shadow-orange-500/20'
+                      : 'text-slate-700 hover:bg-orange-50'
+                  }`}
+                >
+                  پرتره عکاسی
+                </button>
                 <button
                   type="button"
                   onClick={() => setHeroVisualType('vector')}
@@ -138,18 +149,7 @@ export default function HomeView({ onPageChange, onPostSelect }: HomeViewProps) 
                       : 'text-slate-700 hover:bg-sky-100/75'
                   }`}
                 >
-                  🌀 ساختار انتزاعی
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setHeroVisualType('portrait')}
-                  className={`flex-1 py-1.5 px-3 rounded-lg text-[10px] sm:text-xs font-bold transition-all cursor-pointer ${
-                    heroVisualType === 'portrait'
-                      ? 'bg-[#0ea5e9] text-white shadow-md shadow-[#0ea5e9]/20'
-                      : 'text-slate-700 hover:bg-sky-100/75'
-                  }`}
-                >
-                  🖼️ پرتره عکاسی
+                  ساختار انتزاعی
                 </button>
               </div>
 
@@ -159,14 +159,19 @@ export default function HomeView({ onPageChange, onPostSelect }: HomeViewProps) 
                     <SkyBlueAbstractGraphic preset="general" className="w-full h-full border-none rounded-none bg-gradient-to-br from-white to-sky-50/50" />
                   </div>
                 ) : (
-                  <PremiumVisualFrame
-                    src="/assets/final/hero/home-hero-shahriar-vision.webp"
-                    alt="پرتره رسمی مهندس شهریار"
-                    fallbackPreset="general"
-                    overlayLabel="مهندس علیرضا شهریار - بنیان‌گذار"
-                    aspectClass="aspect-square"
-                    className="min-h-[340px]"
-                  />
+                  <div className="relative border-2 border-sky-200/60 rounded-3xl overflow-hidden shadow-2xl bg-white aspect-[3/4] min-h-[420px] group">
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent z-10 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-sky-400/10 to-transparent pointer-events-none" />
+                    <img
+                      src="/assets/final/people/founder-standing-cactus-dark-suit.webp"
+                      alt="مهندس علیرضا شهریار - بنیان‌گذار و مشاور ارشد استراتژیک"
+                      className="w-full h-full object-cover object-[48%_28%] scale-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
+                      <span className="text-white font-bold text-sm block">مهندس علیرضا شهریار</span>
+                      <span className="text-[#7dd3fc] text-xs block mt-1">بنیان‌گذار و مشاور ارشد استراتژیک</span>
+                    </div>
+                  </div>
                 )}
               </div>
 

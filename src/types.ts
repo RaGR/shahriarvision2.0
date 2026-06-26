@@ -26,6 +26,10 @@ export interface BlogPost {
   date: string;
   readTime: string;
   image: string;
+  tags: string[];
+  author: string;
+  seoTitle: string;
+  seoDescription: string;
 }
 
 export interface ConsultationRequest {
