@@ -13,6 +13,7 @@ import { blogData } from '../data/blogData';
 import SkyBlueAbstractGraphic from './SkyBlueAbstractGraphic';
 import PremiumVisualFrame from './PremiumVisualFrame';
 import StrategicSimulator from './StrategicSimulator';
+import { asset } from '../lib/paths';
 
 interface HomeViewProps {
   onPageChange: (page: string) => void;
@@ -163,7 +164,7 @@ export default function HomeView({ onPageChange, onPostSelect }: HomeViewProps) 
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent z-10 pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-b from-sky-400/10 to-transparent pointer-events-none" />
                     <img
-                      src="/assets/final/people/founder-standing-cactus-dark-suit.webp"
+                      src={asset('/assets/final/people/founder-standing-cactus-dark-suit.webp')}
                       alt="مهندس علیرضا شهریار - بنیان‌گذار و مشاور ارشد استراتژیک"
                       className="w-full h-full object-cover object-[48%_28%] scale-100 group-hover:scale-105 transition-all duration-700 ease-out"
                     />

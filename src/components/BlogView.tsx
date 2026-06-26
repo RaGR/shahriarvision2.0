@@ -11,6 +11,7 @@ import {
   ChevronLeft, BookOpen, Share2, MessageSquare, AlertCircle, Sparkles
 } from 'lucide-react';
 import PremiumVisualFrame from './PremiumVisualFrame';
+import { asset } from '../lib/paths';
 
 const getPresetForCategory = (category: string): 'branding' | 'org-chart' | 'crm' | 'erp' | 'business-plan' | 'swot' | 'human-resources' | 'sales-growth' | 'digital-marketing' | 'general' => {
   if (category.includes('برند')) return 'branding';
@@ -109,7 +110,7 @@ export default function BlogView({ selectedPostId, onPostSelect, onPageChange }:
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full border border-sky-200 overflow-hidden bg-sky-50">
                   <img
-                    src="/assets/final/people/founder-standing-cactus-light-shirt.webp"
+                    src={asset('/assets/final/people/founder-standing-cactus-light-shirt.webp')}
                     alt="مهندس علیرضا شهریار"
                     className="w-full h-full object-cover object-top"
                   />

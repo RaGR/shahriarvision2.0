@@ -5,6 +5,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowLeft, Phone, ChevronDown } from 'lucide-react';
+import { asset } from '../lib/paths';
 
 interface NavbarProps {
   currentPage: string;
@@ -81,7 +82,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
             {/* Logo Section */}
             <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleNavClick('home')}>
               <img
-                src="/assets/final/brand/logo-primary.png"
+                src={asset('/assets/final/brand/logo-primary.png')}
                 alt="لوگوی شهریار ویژن"
                 className="h-9 sm:h-12 w-auto object-contain transition-transform duration-500 hover:scale-105"
               />

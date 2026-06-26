@@ -5,6 +5,7 @@
 
 import React, { useState } from 'react';
 import SkyBlueAbstractGraphic from './SkyBlueAbstractGraphic';
+import { asset } from '../lib/paths';
 
 interface PremiumVisualFrameProps {
   src: string;
@@ -16,13 +17,13 @@ interface PremiumVisualFrameProps {
 }
 
 const STOCK_IMAGES_FALLBACK: Record<string, string> = {
-  '/input_file_0.png': '/assets/final/hero/home-hero-shahriar-vision.webp',
-  '/input_file_1.png': '/assets/final/brand/logo-primary.png',
-  '/input_file_2.png': '/assets/final/people/founder-desk-consultation.webp',
-  '/input_file_3.png': '/assets/final/people/founder-desk-consultation.webp',
-  '/input_file_4.png': '/assets/final/people/founder-standing-cactus-dark-suit.webp',
-  '/input_file_5.png': '/assets/final/people/founder-lounge-strategy.webp',
-  '/input_file_6.png': '/assets/final/backgrounds/footer-contact-background.webp',
+  '/input_file_0.png': asset('/assets/final/hero/home-hero-shahriar-vision.webp'),
+  '/input_file_1.png': asset('/assets/final/brand/logo-primary.png'),
+  '/input_file_2.png': asset('/assets/final/people/founder-desk-consultation.webp'),
+  '/input_file_3.png': asset('/assets/final/people/founder-desk-consultation.webp'),
+  '/input_file_4.png': asset('/assets/final/people/founder-standing-cactus-dark-suit.webp'),
+  '/input_file_5.png': asset('/assets/final/people/founder-lounge-strategy.webp'),
+  '/input_file_6.png': asset('/assets/final/backgrounds/footer-contact-background.webp'),
 };
 
 export default function PremiumVisualFrame({
@@ -34,10 +35,9 @@ export default function PremiumVisualFrame({
   aspectClass = 'aspect-3/4'
 }: PremiumVisualFrameProps) {
   const [hasError, setHasError] = useState(false);
-  const [displaySrc, setDisplaySrc] = useState(src);
+  const [displaySrc, setDisplaySrc] = useState(() => asset(src));
 
   const handleImageError = () => {
-    // If local path fails, try online fallback URL before hard failing to Vector/Abstract graphic
     const fallback = STOCK_IMAGES_FALLBACK[src];
     if (fallback && displaySrc !== fallback) {
       setDisplaySrc(fallback);

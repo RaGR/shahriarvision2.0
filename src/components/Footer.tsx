@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { Mail, Phone, MapPin, Award, CheckCircle2, ChevronLeft } from 'lucide-react';
+import { asset } from '../lib/paths';
 
 interface FooterProps {
   onPageChange: (page: string) => void;
@@ -27,7 +28,7 @@ export default function Footer({ onPageChange }: FooterProps) {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <img
-                src="/assets/final/brand/brand-script-white.png"
+                src={asset('/assets/final/brand/brand-script-white.png')}
                 alt="لوگو سفید شهریار ویژن"
                 className="h-10 w-auto object-contain bg-white/10 p-1.5 rounded-lg"
               />
