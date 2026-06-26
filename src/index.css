@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Vazirmatn", -apple-system, sans-serif;
+  
+  /* Redefine orange to be beautiful pastel orange colorway */
+  --color-orange-50: #fff6f0;
+  --color-orange-100: #ffe8db;
+  --color-orange-200: #ffd1b8;
+  --color-orange-300: #ffaf87;
+  --color-orange-400: #ff915c;
+  --color-orange-500: #ff7d3e; /* Pastel orange primary */
+  --color-orange-600: #e66425;
+  --color-orange-700: #bf4d17;
+  --color-orange-850: #993b10;
+  
+  /* Redefine sky to be beautiful pastel sky blue colorway */
+  --color-sky-50: #f0f7ff;
+  --color-sky-100: #e0effe;
+  --color-sky-200: #b9dffd;
+  --color-sky-300: #7cc3fc;
+  --color-sky-400: #38a5f8;
+  --color-sky-500: #29b6f6; /* Modern sky blue */
+  --color-sky-600: #039be5;
+  --color-sky-700: #0288d1;
+  --color-[#0ea5e9]: #29b6f6; /* Also map hard-coded sky blue color */
+}
+
+/* Base body customisations */
+body {
+  font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Animations declarations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDownStartup {
+  from {
+    opacity: 0;
+    transform: translateY(-24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-down-startup {
+  animation: slideDownStartup 1.2s cubic-bezier(0.25, 1, 0.4, 1) forwards;
+}
+

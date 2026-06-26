@@ -1,0 +1,6 @@
+{
+  "name": "شهریار ویژن",
+  "description": "وب‌سایت رسمی مشاوره مدیریت و توسعه کسب‌وکار شهریار ویژن. ارائه خدمات تخصصی برندینگ، چارت سازمانی، بیزنس پلن، استقرار سیستم‌های CRM و ERP، ارزیابی عملکرد و توسعه فروش.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
